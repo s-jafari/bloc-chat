@@ -1,11 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html ng-App="blocChat">
+  <head lang="en">
     <meta charset="UTF-8">
-    <title>Bloc Base Project</title>
+    <title>Bloc Chat</title>
     <link rel="stylesheet" href="/styles/main.css">
-</head>
-<body>
+  </head>
+  <body>
     <script src="/scripts/app.js"></script>
-</body>
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCm4WO6BkaOgKNpmMl6URm3QJ8Y9txsQ-8",
+        authDomain: "bloc-chat-a6f30.firebaseapp.com",
+        databaseURL: "https://bloc-chat-a6f30.firebaseio.com",
+        projectId: "bloc-chat-a6f30",
+        storageBucket: "bloc-chat-a6f30.appspot.com",
+        messagingSenderId: "876624227775"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </body>
 </html>
