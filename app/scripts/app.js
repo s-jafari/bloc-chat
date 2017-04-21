@@ -5,24 +5,13 @@
       enabled: true,
       requireBase: false
     });
-/* Example code below:  
+
     $stateProvider
-      .state('landing', {
+      .state('home', {
         url: '/',
-        controller: 'LandingCtrl as landing',
-        templateUrl: '/templates/landing.html'
-      })
-      .state('album', {
-        url: '/album',
-        controller: 'AlbumCtrl as album',
-        templateUrl: '/templates/album.html'
-      })
-      .state('collection', {
-        url: '/',
-        controller: 'CollectionCtrl as collection',
-        templateUrl: '/templates/collection.html'
+        controller: 'HomeCtrl as home',
+        templateUrl: '/templates/home.html'
       });
-*/  
   }
 
   angular

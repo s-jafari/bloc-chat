@@ -1,0 +1,21 @@
+*, *::before, *::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: boder-box;
+  box-sizing: border-box;
+}
+
+#sidebar {
+  position: fixed;
+  position: absolute;
+  height: 100%;
+  width: 220px;
+  background-color: lightgrey;
+}
+
+h2 {
+  margin-left: 20px;
+}
+
+#rooms {
+  margin-left: 20px;
+}
