@@ -1,11 +1,19 @@
 (function() {
   function Room($firebaseArray) {
-    var ref = firebase.database().ref().child("rooms");
+    var Room = {};
+    
+    var ref = firebase.database().ref().child('rooms');
     var rooms = $firebaseArray(ref);
     
-    return {
-      all: rooms
+    Room.all = rooms;
+    
+    Room.addUserInput = function() {
+      var userInput = document.getElementById('userInput').value;
+      rooms.$add(userInput);
+      alert(userInput + ' has been added.');
     };
+    
+    return Room;
   }
   
   angular
