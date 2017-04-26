@@ -7,10 +7,9 @@
     });
 
     $stateProvider
-      .state('home', {
+      .state('landing', {
         url: '/',
-        controller: 'HomeCtrl as home',
-        templateUrl: '/templates/home.html'
+        templateUrl: '/templates/landing.html'
       });
   }
 

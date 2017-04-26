@@ -7,6 +7,10 @@
     
     Room.all = rooms;
     
+    Room.zeig = function() {
+      console.log(Room.all)
+    };
+    
     Room.addUserInput = function() {
       var userInput = document.getElementById('userInput').value;
       rooms.$add(userInput);

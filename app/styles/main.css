@@ -19,3 +19,14 @@ h2 {
 #rooms {
   margin-left: 20px;
 }
+
+.filling {
+  position: absolute;
+  left: 270px;
+  top: 20px;
+}
+
+.room-name:hover {
+  font-weight: bold;
+  cursor: pointer;
+}

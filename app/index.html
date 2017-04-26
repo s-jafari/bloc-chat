@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-App="blocChat">
+<html ng-App="blocChat" ng-controller="MainCtrl as main">
   <head lang="en">
     <meta charset="UTF-8">
     <title>Bloc Chat</title>
@@ -8,6 +8,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
+    
+    <aside id="sidebar">
+      <h2>Bloc Chat</h2>
+      <div ng-repeat="room in main.room.all" id="rooms">
+        <p class="room-name" ng-click="main.changeRoom()">{{ room.$value }}</p>
+      </div>
+          
+      <div ng-controller="ModalCtrl as $ctrl" id="modal">
+        <script type="text/ng-template" id="myModalContent.html">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Create new room</h3>
+          </div>
+          <div class="modal-body" id="modal-body">
+            <form>
+              Enter a room name
+              <input type="text" id="userInput">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="main.room.addUserInput(); $ctrl.ok()">Create room</button>
+            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+          </div>
+        </script>
+        <script type="text/ng-template" id="stackedModal.html">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modal-title-{{name}}">The {{name}} modal!</h3>
+          </div>
+          <div class="modal-body" id="modal-body-{{name}}">
+          </div>
+        </script>
+        <button type="button" class="btn btn-default" ng-click="$ctrl.open('sm')">New room</button>
+      </div>
+    </aside>
     
     <ui-view></ui-view>
     
@@ -35,7 +68,8 @@
     <script src="scripts/ui-bootstrap-custom-tpls-2.5.0.min.js"></script>
     <script src="/scripts/app.js"></script>
     <script src="scripts/services/Room.js"></script>
-    <script src="scripts/controllers/HomeCtrl.js"></script>
+    <script src="scripts/services/Message.js"></script>
+    <script src="scripts/controllers/MainCtrl.js"></script>
     <script src="scripts/controllers/ModalCtrl.js"></script>
   </body>
 </html>
