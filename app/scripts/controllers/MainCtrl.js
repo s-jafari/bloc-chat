@@ -2,16 +2,15 @@
   function MainCtrl(Room, Message) {
     var main = {};
     
-    var activeRoom = null;
-    
     main.room = Room;
     main.message = Message;
     
-    main.changeRoom = function() {
-      activeRoom = event.target;
-      var roomID = activeRoom.$id;
-      document.getElementById('header').innerHTML = activeRoom.$value;
-      document.getElementById('content').innerHTML = message.getRoomId(activeRoom.$id);
+    main.activeRoom = null;
+    main.roomMessages = null;
+        
+    main.changeRoom = function(room) {
+      activeRoom = room;
+      roomMessages = main.message.getByRoomId(activeRoom.$id);
     };
     
     return main;

@@ -11,9 +11,11 @@
     
     <aside id="sidebar">
       <h2>Bloc Chat</h2>
-      <div ng-repeat="room in main.room.all" id="rooms">
-        <p class="room-name" ng-click="main.changeRoom()">{{ room.$value }}</p>
-      </div>
+      <ul ng-repeat="room in main.room.all" id="rooms">
+        <div class="room-name" ng-click="main.changeRoom(room)">
+          <li>{{ room.$value }}</li>
+        </div>
+      </ul>
           
       <div ng-controller="ModalCtrl as $ctrl" id="modal">
         <script type="text/ng-template" id="myModalContent.html">
@@ -41,6 +43,13 @@
         <button type="button" class="btn btn-default" ng-click="$ctrl.open('sm')">New room</button>
       </div>
     </aside>
+    
+     <main class="content">
+      <h1 id="header">{{ main.activeRoom.$value }} </h1>
+      <ul ng-repeat="message in main.roomMessages" id="messages">
+        <li><i>{{ message.sentAt }}</i> {{ message.username }}:<br>{{ message.content }}</li>
+      </ul>
+    </main>
     
     <ui-view></ui-view>
     

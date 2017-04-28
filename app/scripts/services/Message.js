@@ -5,9 +5,9 @@
     var ref = firebase.database().ref().child("messages");
     var messages = $firebaseArray(ref);
     
-    Message.getRoomId = function (roomID) {
-      var roomMessages = messages.oderByChild(roomID);
-      return roomMessages;
+    Message.getByRoomId = function (roomId) {
+      var roomMessages = ref.orderByChild('roomId').equalTo(roomId);      
+      return $firebaseArray(roomMessages);
     };
     
     return Message;
