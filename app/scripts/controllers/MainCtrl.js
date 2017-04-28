@@ -9,8 +9,8 @@
     main.roomMessages = null;
         
     main.changeRoom = function(room) {
-      activeRoom = room;
-      roomMessages = main.message.getByRoomId(activeRoom.$id);
+      this.activeRoom = room;
+      this.roomMessages = main.message.getByRoomId(this.activeRoom.$id);
     };
     
     return main;
