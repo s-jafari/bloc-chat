@@ -1,0 +1,16 @@
+<div id="user-modal">
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Enter a username!</h3>
+  </div>
+  
+  <div class="modal-body" id="modal-body">
+    <form>
+      This name will be used to send messages. <br>
+      <input type="text" id="username">
+    </form>
+  </div>
+  
+  <div class="modal-footer">
+    <button class="btn btn-primary" id="user-btn" type="button" ng-click="$ctrl.message.setUsername(); $ctrl.ok()">Submit</button>
+  </div>
+</div>

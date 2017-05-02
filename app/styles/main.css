@@ -9,7 +9,7 @@
   position: absolute;
   height: 100%;
   width: 220px;
-  background-color: lightgrey;
+  background-color: lightgray;
 }
 
 h2 {
@@ -29,4 +29,14 @@ h2 {
 .room-name:hover {
   font-weight: bold;
   cursor: pointer;
+}
+
+#messages {
+  list-style-type: none;
+  display: inline-block;
+  width: 100%;
+}
+
+#messages:nth-child(odd){
+  background-color: #f2f2f2;
 }

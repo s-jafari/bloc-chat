@@ -2,7 +2,6 @@ angular
   .module('blocChat')
   .controller('ModalCtrl', function ($uibModal, $log, $document) {
     var $ctrl = this;
-    $ctrl.items = ['item1', 'item2', 'item3'];
   
     $ctrl.animationsEnabled = true;
   
@@ -32,25 +31,3 @@ angular
       });
     };
   });
-
-// Please note that $uibModalInstance represents a modal window (instance) dependency.
-// It is not the same as the $uibModal service used above.
-
-  angular
-    .module('blocChat')
-    .controller('ModalInstanceCtrl', ['$uibModalInstance', 'items','Room', function ($uibModalInstance, items, Room) {
-      var $ctrl = this;
-      $ctrl.items = items;
-      $ctrl.selected = {
-        item: $ctrl.items[0]
-      };
-      
-      $ctrl.ok = function () {
-        Room.addUserInput();
-        $uibModalInstance.close($ctrl.selected.item);
-      };
-      
-      $ctrl.cancel = function () {
-        $uibModalInstance.dismiss('cancel');
-      };
-  }]);

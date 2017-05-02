@@ -29,17 +29,11 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="main.room.addUserInput(); $ctrl.ok()">Create room</button>
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.room.addUserInput(); $ctrl.ok()">Create room</button>
             <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
           </div>
         </script>
-        <script type="text/ng-template" id="stackedModal.html">
-          <div class="modal-header">
-            <h3 class="modal-title" id="modal-title-{{name}}">The {{name}} modal!</h3>
-          </div>
-          <div class="modal-body" id="modal-body-{{name}}">
-          </div>
-        </script>
+
         <button type="button" class="btn btn-default" ng-click="$ctrl.open('sm')">New room</button>
       </div>
     </aside>
@@ -47,7 +41,7 @@
      <main class="content">
       <h1 id="header">{{ main.activeRoom.$value }} </h1>
       <ul ng-repeat="message in main.roomMessages" id="messages">
-        <li><i>{{ message.sentAt }}</i> {{ message.username }}:<br>{{ message.content }}</li>
+        <li><b>{{ message.username }}</b> <i>{{ message.sentAt }}</i>:<br>{{ message.content }}</li>
       </ul>
     </main>
     
@@ -75,10 +69,13 @@
     </script>
     <!-- ui-bootstrap -->
     <script src="scripts/ui-bootstrap-custom-tpls-2.5.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
     <script src="/scripts/app.js"></script>
+    <script src="scripts/run.js"></script>
     <script src="scripts/services/Room.js"></script>
     <script src="scripts/services/Message.js"></script>
     <script src="scripts/controllers/MainCtrl.js"></script>
     <script src="scripts/controllers/ModalCtrl.js"></script>
+    <script src="scripts/controllers/ModalInstanceCtrl.js"></script>
   </body>
 </html>
