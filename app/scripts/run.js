@@ -6,9 +6,10 @@
 
         ariaLabelledBy: 'modal-title',
         ariaDescribedBy: 'modal-body',
-        templateUrl: 'templates/userModal.html',
-        controller: 'ModalInstanceCtrl',
+        templateUrl: 'templates/usernameModal.html',
+        controller: 'UsernameModalCtrl',
         controllerAs: '$ctrl',
+        size: 'md',
         keyboard: false,
         backdrop: 'static'
 

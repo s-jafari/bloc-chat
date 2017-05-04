@@ -1,5 +1,5 @@
 (function() {
-  function Message($firebaseArray, $cookies) {
+  function Message($firebaseArray) {
     var Message = {};
     
     var ref = firebase.database().ref().child("messages");
@@ -10,15 +10,10 @@
       return $firebaseArray(roomMessages);
     };
     
-    Message.setUsername = function () {
-      $cookies.blocChatCurrentUser = document.getElementById('username').value;
-      alert($cookies.blocChatCurrentUser + " has been set as your username.");
-    };
-    
     return Message;
   }
 
   angular
     .module('blocChat')
-    .factory('Message', ['$firebaseArray', '$cookies', Message]);
+    .factory('Message', ['$firebaseArray', Message]);
 })();

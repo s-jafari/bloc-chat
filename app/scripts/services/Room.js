@@ -7,12 +7,6 @@
     
     Room.all = rooms;
     
-    Room.addUserInput = function() {
-      var userInput = document.getElementById('userInput').value;
-      rooms.$add(userInput);
-      alert(userInput + ' has been added.');
-    };
-    
     return Room;
   }
   
