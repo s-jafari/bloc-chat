@@ -3,12 +3,12 @@ angular
   .controller('UsernameModalCtrl', ['$scope', '$uibModalInstance', '$cookies', function ($scope, $uibModalInstance, $cookies) {
     
     $scope.setUsername = function () {
-      if($scope.username == "") {
+      if($scope.username == "" || $scope.username == undefined) {
         alert('Please enter a username.');
       } else {
-      $cookies.blocChatCurrentUser = $scope.username;
-      alert($cookies.blocChatCurrentUser + " has been set as your username.");
-      $uibModalInstance.close();
+        $cookies.blocChatCurrentUser = $scope.username;
+        alert($cookies.blocChatCurrentUser + " has been set as your username.");
+        $uibModalInstance.close();
       }
     };
  
