@@ -1,16 +1,27 @@
 (function() {
-  function MainCtrl($scope, $uibModal, Room, Message) {
+  function MainCtrl($scope, $uibModal, $cookies, Room, Message) {
     var main = this;
     
     this.room = Room;
     this.message = Message;
     
-    this.activeRoom = null;
+    this.activeRoom = undefined;
     this.roomMessages = null;
         
     this.changeRoom = function(room) {
       this.activeRoom = room;
       this.roomMessages = this.message.getByRoomId(this.activeRoom.$id);
+    };
+    
+    $scope.sendMessage = function() {
+      var newMessage = {
+        username: $cookies.blocChatCurrentUser,
+        sentAt: new Date().toLocaleString(),
+        content: $scope.messageContent,
+        roomId: main.activeRoom.$id       
+      };
+      main.message.send(newMessage);
+      $scope.messageContent = "";
     };
     
     $scope.open = function (size) {
@@ -29,5 +40,5 @@
   
   angular
     .module('blocChat')
-    .controller('MainCtrl', ['$scope', '$uibModal', 'Room', 'Message', MainCtrl]);
+    .controller('MainCtrl', ['$scope', '$uibModal', '$cookies', 'Room', 'Message', MainCtrl]);
 })();

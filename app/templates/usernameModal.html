@@ -6,7 +6,7 @@
   <div class="modal-body" id="modal-body">
     <form>
       This name will be used to send messages. <br>
-      <input type="text" id="username" ng-model="username" disallow-spaces>
+      <input type="text" id="username" ng-model="username" disallow-spaces ng-keyup="$event.keyCode == 13 && setUsername()">
     </form>
   </div>
   

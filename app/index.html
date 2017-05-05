@@ -20,13 +20,21 @@
       <button type="button" class="btn btn-default" ng-click="open('sm')">New room</button>
     </aside>
     
-     <main class="content">
+    <main class="content">
       <h1 id="header">{{ main.activeRoom.$value }} </h1>
       <ul ng-repeat="message in main.roomMessages" id="messages">
         <li><b>{{ message.username }}</b> <i>{{ message.sentAt }}</i>:<br>{{ message.content }}</li>
       </ul>
     </main>
     
+    <footer class="chat-input" ng-hide="!main.activeRoom.$value">
+      <form>
+        <input id="message-content" type="text" ng-model="messageContent">
+        <button id="send-message" ng-click="sendMessage()">Send</button>
+      </form>
+    </footer>
+    
+  
     <ui-view></ui-view>
     
     <!-- Angular -->

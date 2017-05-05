@@ -4,7 +4,7 @@
 <div class="modal-body" id="modal-body">
   <form>
     Enter a room name
-    <input type="text" id="userInput" ng-model="userInput">
+    <input type="text" id="userInput" ng-model="userInput" ng-keyup="$event.keyCode == 13 && addRoom()">
   </form>
 </div>
 <div class="modal-footer">
